@@ -28,7 +28,6 @@ public class JokeAsyncTask extends AsyncTask<Pair<Context,String>,Void,String> {
 
     @Override
     protected String doInBackground(Pair<Context, String>... params) {
-        System.out.println("--> doInBackground ! ");
         if(GCEService == null){
             // Only do this once
             MyApi.Builder builder = new MyApi.Builder(AndroidHttp.newCompatibleTransport(),
@@ -61,6 +60,7 @@ public class JokeAsyncTask extends AsyncTask<Pair<Context,String>,Void,String> {
     @Override
     protected void onPostExecute(String s) {
         Intent jokeIntent = new Intent(context, JokeActivity.class);
+        jokeIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         jokeIntent.putExtra("joke",s);
         context.startActivity(jokeIntent);
     }
