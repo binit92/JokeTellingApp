@@ -38,7 +38,7 @@ dependencies {
     compile project(':jokecreator')
     compile project(':jokeactivity')
     compile 'com.android.support:appcompat-v7:25.0.0'
-    compile 'com.google.android.gms:play-services-ads:9.8.0'
+    freeCompile 'com.google.android.gms:play-services-ads:9.8.0'
 
     compile group: 'com.google.api-client', name: 'google-api-client', version: '1.22.0'
     compile group: 'com.google.api-client', name: 'google-api-client-android', version: '1.22.0'
